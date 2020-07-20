@@ -42,7 +42,7 @@ spec:
       image: kubernautslabs/helm-kubectl
       command: ["helm"]
       args:
-        - "list"
+        - "-h"
         # - "-h"
         # - "hello-1.tgz"
         # - "chartmuseum"

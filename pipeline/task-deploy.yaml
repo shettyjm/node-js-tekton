@@ -43,6 +43,7 @@ spec:
       command: ["helm"]
       args:
         - "push"
-        - "hello-1.tgz"
-        - "chartmuseum"
+        - "-h"
+        # - "hello-1.tgz"
+        # - "chartmuseum"
       

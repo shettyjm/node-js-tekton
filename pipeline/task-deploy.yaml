@@ -30,9 +30,19 @@ spec:
         - "s;IMAGE;$(inputs.params.imageUrl):$(inputs.params.imageTag);g"
         - "$(inputs.resources.git-source.path)/$(inputs.params.pathToContext)/$(inputs.params.pathToYamlFile)"
     - name: deploy-app
-      image: lachlanevenson/k8s-kubectl
+      # image: lachlanevenson/k8s-kubectl
+      # image from kubernautslabs with helm push plugin
+      image: kubernautslabs/helm-kubectl
       command: ["kubectl"]
       args:
         - "apply"
         - "-f"
         - "$(inputs.resources.git-source.path)/$(inputs.params.pathToContext)/$(inputs.params.pathToYamlFile)"
+    - name: helm-push
+      image: kubernautslabs/helm-kubectl
+      command: ["helm"]
+      args:
+        - "push"
+        - "hello-1.tgz"
+        - "chartmuseum"
+      

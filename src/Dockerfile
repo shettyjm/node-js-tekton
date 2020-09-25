@@ -1,5 +1,5 @@
-FROM node:13.8.0-alpine3.11
-
+#FROM node:13.8.0-alpine3.11
+FROM node:latest
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app

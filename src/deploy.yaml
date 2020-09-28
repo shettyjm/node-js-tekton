@@ -34,6 +34,7 @@ spec:
       containers:
       - name: app
         # Because kube-registry-proxy is present localhost access is via http instead of https
-        image: localhost:5000/app:0.0.1
+        imagePullPolicy: Always
+        image: localhost:5000/app:latest
         ports:
         - containerPort: 8080
